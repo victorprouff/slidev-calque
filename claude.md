@@ -25,7 +25,7 @@ Outil pour créer et faire évoluer mes présentations de formation (cybersécur
 ## Organisation
 
 - Ce dépôt contient l'outil uniquement. Les présentations sont dans un dépôt séparé (`../slides-formation`), qui a son propre CLAUDE.md.
-- Pendant le développement, les présentations référencent l'outil par chemin relatif (`theme: ../surcouche-slidev/themes/cyber`, `addons: [../surcouche-slidev/addon-socle]`).
+- Pendant le développement, les présentations référencent l'outil par chemin relatif (`theme: ../slidev-calque/themes/cyber`, `addons: [../slidev-calque/addon]`).
 - Une fois stable : publication en paquets versionnés.
 - Les décisions importantes sont notées dans `docs/decisions/`.
 
