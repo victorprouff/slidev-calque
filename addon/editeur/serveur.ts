@@ -15,7 +15,7 @@ import type { Plugin } from 'vite'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { ecrireTokens, lireTokens, valeurAcceptable } from './css'
+import { ecrireTokens, lireTokens, valeurAcceptable } from './css.ts'
 
 interface Theme {
   nom: string

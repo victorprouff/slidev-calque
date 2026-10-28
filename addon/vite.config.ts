@@ -1,4 +1,4 @@
-import { editeurTokens } from './editeur/serveur'
+import { editeurTokens } from './editeur/serveur.ts'
 
 /*
  * Slidev fusionne ce fichier avec sa propre configuration Vite.
