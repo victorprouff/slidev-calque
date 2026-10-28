@@ -19,5 +19,8 @@
         "local": "Miso,Barlow Condensed"
       }
     }
+  },
+  "calque": {
+    "tokens": "styles/tokens.css"
   }
 }

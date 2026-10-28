@@ -37,7 +37,7 @@ Outil pour créer et faire évoluer mes présentations de formation (cybersécur
 
 1. Contrat de tokens : liste et nommage des variables, à partir de mes présentations existantes → `docs/tokens.md`.
 2. Socle minimal : addon avec 2-3 composants, un thème parent, un thème enfant, chargés depuis le dépôt des slides. Valide l'héritage et le chargement par chemin relatif (rechargement à chaud, résolution des dépendances).
-3. Éditeur graphique de tokens.
+3. Éditeur graphique de tokens : page `/__calque` du serveur de dev, voir `docs/decisions/003-editeur-de-tokens.md`.
 
 ## Conventions
 
