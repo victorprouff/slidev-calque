@@ -8,15 +8,17 @@
       { texte: '/login', legende: 'chemin' },
     ]" />
   ton : "danger", "succes" ou "accent" pour faire ressortir un morceau. Sans ton : neutre.
+  une-ligne : police un peu plus petite et pas de retour à la ligne (adresses longues).
 -->
 <script setup lang="ts">
 defineProps<{
   morceaux: { texte: string, legende?: string, ton?: 'danger' | 'succes' | 'accent' }[]
+  uneLigne?: boolean
 }>()
 </script>
 
 <template>
-  <div class="url-decoupee">
+  <div class="url-decoupee" :class="{ 'url-decoupee--une-ligne': uneLigne }">
     <span
       v-for="(m, i) in morceaux"
       :key="i"
@@ -57,7 +59,26 @@ defineProps<{
   border-bottom: var(--trait-titre) solid var(--couleur-bordure);
 }
 
+.url-decoupee--une-ligne {
+  flex-wrap: nowrap;
+  /* Petit écart entre les morceaux : chaque soulignement et sa légende restent distincts */
+  column-gap: 0.2em;
+}
+
+/* Les morceaux gardent leur largeur : sinon ils se compriment et les légendes se chevauchent */
+.url-decoupee--une-ligne .url-decoupee__morceau {
+  flex-shrink: 0;
+}
+
+.url-decoupee--une-ligne .url-decoupee__texte {
+  font-size: var(--taille-petit);
+  word-break: normal;
+  white-space: nowrap;
+}
+
 .url-decoupee__legende {
+  /* Centrée sous son morceau */
+  align-self: center;
   margin-top: var(--espace-xs);
   font-size: var(--taille-mini);
   letter-spacing: var(--approche-etiquette);
