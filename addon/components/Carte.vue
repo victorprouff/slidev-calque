@@ -14,7 +14,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="carte" :class="variante && `carte--${variante}`">
+  <div class="carte" :class="[variante && `carte--${variante}`, { 'carte--texte-seul': num === undefined && !surtitre && !titre && !$slots.titre }]">
     <div v-if="num !== undefined" class="carte__num">{{ num }}</div>
     <div v-if="surtitre" class="carte__surtitre">{{ surtitre }}</div>
     <h3 v-if="titre || $slots.titre" class="carte__titre">
@@ -65,6 +65,12 @@ defineProps<{
 .carte__texte {
   font-size: var(--taille-petit);
   color: var(--couleur-texte-attenue);
+}
+
+/* Carte sans titre ni numéro : son texte est le contenu principal, pas une légende */
+.carte--texte-seul .carte__texte {
+  font-size: var(--taille-texte);
+  color: var(--couleur-texte);
 }
 
 /* Le texte passé en Markdown arrive dans des <p> : on retire leurs marges */

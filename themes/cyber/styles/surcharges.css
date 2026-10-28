@@ -1,4 +1,5 @@
 /* Surcharges du thème cyber : uniquement les tokens qui diffèrent de base.
  * Modifiables à la main ou avec l'éditeur de tokens (page /__calque). */
 :root {
+  --taille-titre-section: 3.25rem;
 }

@@ -1,1 +1,2 @@
-- [ ] Pouvoir créer un nouveau deck de slide avec tous les imports qui vont bien automatiquement (dossier public) => Peut-être dans slide plutôt qu'ici via un makefile
+- [ ] Pouvoir refermer l'éditeur et revenir au mode présentation
+- [ ] 

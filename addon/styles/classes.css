@@ -1,0 +1,135 @@
+/* ==============================================================
+ * CLASSES DE MISE EN PAGE partagées par les présentations :
+ * kicker, source, sections numérotées, slide noire, réflexes, touches.
+ * Usage dans une slide : <div class="kicker">…</div>, layout: section + class: sec…
+ * Uniquement des références aux tokens.
+ * ============================================================== */
+
+/* Grands numéros de section et pastilles de réflexe : même police que les titres */
+.sec-num,
+.reflexe .pastille {
+  font-family: var(--police-titre);
+}
+
+/* Petit libellé au-dessus d'un titre */
+.kicker {
+  font-size: 0.85rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--couleur-texte-attenue);
+  margin-bottom: 0.4rem;
+}
+
+/* Source en pied de slide */
+.source {
+  position: absolute;
+  left: var(--marge-slide);
+  bottom: 1.1rem;
+  font-size: 0.75rem;
+  color: var(--couleur-texte-attenue);
+  opacity: 0.85;
+}
+
+/* ==============================================================
+ * SECTION — grand numéro + titre, centrés, fond plus profond
+ * Usage : layout: section + class: sec  puis <div class="sec-num">01</div>
+ * ============================================================== */
+.slidev-layout.sec {
+  background: var(--couleur-fond-profond);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.sec-num {
+  font-size: var(--taille-numero-section);
+  font-weight: var(--graisse-forte);
+  line-height: 0.9;
+  color: transparent;
+  -webkit-text-stroke: var(--trait-fort) var(--couleur-accent);
+  opacity: 0.9;
+}
+
+.slidev-layout.sec h1 {
+  font-size: var(--taille-titre-section);
+  margin-top: 0.6rem;
+  line-height: 1;
+}
+
+.slidev-layout.sec p {
+  font-size: var(--taille-moyen);
+  color: var(--couleur-texte-attenue);
+  margin-top: 0.8rem;
+}
+
+/* ==============================================================
+ * NOIR — slide de mise en tension (teaser vidéo, question)
+ * ============================================================== */
+.slidev-layout.noir {
+  position: absolute;
+  inset: 0;
+  background: var(--couleur-fond-intense);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 var(--marge-noir);
+}
+
+/* ==============================================================
+ * RÉFLEXES — numéro rond à gauche du titre
+ * ============================================================== */
+.reflexe {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.reflexe .pastille {
+  flex: none;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  background: var(--couleur-accent);
+  color: var(--couleur-sur-accent);
+  font-weight: var(--graisse-forte);
+  font-size: var(--taille-fort);
+  display: grid;
+  place-items: center;
+  padding-bottom: 3px; /* compense les chiffres de Barlow, légèrement bas */
+}
+
+.reflexe h1 {
+  margin: 0 !important;
+  font-size: var(--taille-titre) !important;
+  position: relative;
+}
+
+/* Trait sous le titre hors du flux : la pastille reste centrée sur le texte */
+.reflexe h1::after {
+  position: absolute;
+  left: 0;
+  bottom: -0.75rem;
+}
+
+/* Touches de clavier */
+kbd.key {
+  display: inline-block;
+  min-width: 3.6rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--rayon-touche);
+  background: var(--couleur-texte);
+  color: var(--couleur-sur-accent);
+  font-family: var(--police-texte);
+  font-weight: var(--graisse-forte);
+  font-size: 1.9rem;
+  text-align: center;
+  box-shadow: var(--ombre-touche);
+}
+
+.plus {
+  font-size: var(--taille-fort);
+  margin: 0 0.6rem;
+  color: var(--couleur-texte-attenue);
+}
