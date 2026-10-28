@@ -1,0 +1,86 @@
+/* ==============================================================
+ * ÉLÉMENTS — habillage des balises standard (titres, liens, listes…).
+ * Uniquement des références aux tokens.
+ * ============================================================== */
+
+.slidev-layout {
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+  font-family: var(--police-texte);
+  font-size: var(--taille-texte);
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3,
+.slidev-layout h4 {
+  color: var(--couleur-accent);
+  font-family: var(--police-titre);
+}
+
+.slidev-layout h1 {
+  font-weight: var(--graisse-forte);
+  letter-spacing: var(--approche-titre);
+}
+
+/* Titre de slide : en couleur de texte, avec un trait d'accent dessous */
+.slidev-layout.default h1,
+.slidev-layout.center h1 {
+  font-size: var(--taille-titre);
+  line-height: var(--interligne-serre);
+  margin-bottom: var(--espace-xs);
+  color: var(--couleur-texte);
+}
+
+.slidev-layout.default h1::after,
+.slidev-layout.center h1::after {
+  content: '';
+  display: block;
+  width: var(--largeur-trait-titre);
+  height: var(--trait-titre);
+  border-radius: var(--rayon-petit);
+  background: var(--couleur-accent);
+  margin-top: var(--espace-s);
+}
+
+/* Slide centrée : le trait se centre aussi */
+.slidev-layout.text-center h1::after {
+  margin-inline: auto;
+}
+
+/*
+ * :where() ramène la spécificité de .slidev-layout à zéro : ces règles pèsent
+ * autant qu'une simple balise. Une classe (.c-succes, ou celle d'un composant)
+ * l'emporte donc toujours. Sans ça, <strong class="c-succes"> restait en accent.
+ */
+:where(.slidev-layout) a {
+  color: var(--couleur-accent);
+  text-decoration-color: var(--couleur-accent-souligne);
+}
+
+:where(.slidev-layout) strong {
+  color: var(--couleur-accent);
+}
+
+:where(.slidev-layout) blockquote {
+  border-color: var(--couleur-accent);
+}
+
+:where(.slidev-layout) ul li::marker { color: var(--couleur-accent); }
+:where(.slidev-layout) ol li::marker { color: var(--couleur-accent); font-weight: var(--graisse-forte); }
+
+/* ---------- Utilitaires de couleur (par rôle) ---------- */
+.c-accent { color: var(--couleur-accent); }
+.c-danger { color: var(--couleur-danger); }
+.c-succes { color: var(--couleur-succes); }
+.c-attenue { color: var(--couleur-texte-attenue); }
+
+/*
+ * Correctif Slidev : la liste d'autocomplétion du dialog « Goto » (touche g)
+ * reste affichée à droite des slides. Champ vide, la recherche renvoie toutes
+ * les slides et la liste déborde de la boîte, placée hors écran (-top-20).
+ * On la masque tant que le dialog est fermé.
+ */
+#slidev-goto-dialog.-top-20 .autocomplete-list {
+  display: none !important;
+}

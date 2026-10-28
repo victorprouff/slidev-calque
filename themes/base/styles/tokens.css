@@ -1,0 +1,104 @@
+/* ==============================================================
+ * TOKENS — contrat complet, voir docs/tokens.md.
+ * Valeurs de départ : la présentation « conférence ».
+ * Un thème enfant importe ce fichier puis redéfinit ce qui change.
+ * ============================================================== */
+
+:root {
+  /* ---------- Palette : propre à ce thème, jamais utilisée par les composants ---------- */
+  --canard: #153644;
+  --canard-profond: #0e2631;
+  --canard-intense: #08171e;
+  --canard-doux: #1e4757;
+  --canard-trait: #2d5a6b;
+  --sable: #dcc29a;
+  --creme: #efe7d8;
+  --corail: #e4795f;
+  --sauge: #8fbfa3;
+
+  /* ---------- Couleurs : rôles ---------- */
+  --couleur-fond: var(--canard);
+  --couleur-fond-profond: var(--canard-profond);
+  --couleur-fond-intense: var(--canard-intense);
+  --couleur-surface: var(--canard-doux);
+  --couleur-bordure: var(--canard-trait);
+  --couleur-texte: var(--creme);
+  --couleur-accent: var(--sable);
+  --couleur-danger: var(--corail);
+  --couleur-succes: var(--sauge);
+  --couleur-sur-accent: var(--couleur-fond-profond);
+  --couleur-fond-clair: #ffffff;
+
+  /* Teintes dérivées : color-mix() mélange le rôle avec du transparent,
+   * elles suivent donc automatiquement si un thème change le rôle. */
+  --couleur-texte-attenue: color-mix(in srgb, var(--couleur-texte) 68%, transparent);
+  --couleur-accent-voile: color-mix(in srgb, var(--couleur-accent) 7%, transparent);
+  --couleur-accent-souligne: color-mix(in srgb, var(--couleur-accent) 40%, transparent);
+  --couleur-danger-voile: color-mix(in srgb, var(--couleur-danger) 12%, transparent);
+  --couleur-succes-voile: color-mix(in srgb, var(--couleur-succes) 8%, transparent);
+
+  /* ---------- Polices ---------- */
+  --police-titre: 'Barlow Condensed', 'Miso', sans-serif;
+  --police-texte: 'Miso', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --police-svg: 'MisoSVG', sans-serif;
+  --police-titre-svg: 'Barlow Condensed', 'MisoSVG', sans-serif;
+  --police-code: 'Fira Code', monospace;
+
+  --graisse-legere: 300;
+  --graisse-normale: 400;
+  --graisse-forte: 700;
+
+  /* ---------- Tailles de texte ---------- */
+  --taille-mini: 0.8rem;
+  --taille-petit: 1.05rem;
+  --taille-texte: 1.25rem;
+  --taille-moyen: 1.5rem;
+  --taille-fort: 1.8rem;
+  --taille-titre: 2.1rem;
+  --taille-chiffre-carte: 2.6rem;
+  --taille-chiffre-petit: 3.5rem;
+  --taille-titre-section: 4rem;
+  --taille-chiffre-moyen: 4.5rem;
+  --taille-chiffre-grand: 5.5rem;
+  --taille-chiffre: 7rem;
+  --taille-numero-section: 9rem;
+
+  /* ---------- Interlignes et approches ---------- */
+  --interligne-serre: 1.1;
+  --interligne-normal: 1.35;
+  --interligne-aere: 1.45;
+  --approche-titre: -0.01em;
+  --approche-etiquette: 0.2em;
+
+  /* ---------- Espacements ---------- */
+  --espace-xs: 0.35rem;
+  --espace-s: 0.6rem;
+  --espace-m: 1rem;
+  --espace-l: 1.4rem;
+  --espace-xl: 2.5rem;
+  --marge-slide: 3.5rem;
+  --marge-section: 5rem;
+  --marge-noir: 6rem;
+  --remplissage-carte: 1.1rem 1.25rem;
+  --remplissage-encadre: 1.4rem 1.8rem;
+
+  /* ---------- Formes ---------- */
+  --rayon-encart: 6px;
+  --rayon-petit: 3px;
+  --rayon-touche: 10px;
+  --rayon-pilule: 999px;
+  --trait-fin: 1px;
+  --trait-moyen: 1.5px;
+  --trait-fort: 2px;
+  --trait-titre: 4px;
+  --largeur-trait-titre: 3.6rem;
+  --largeur-legende: 34rem;
+  --ombre-touche: 0 5px 0 color-mix(in srgb, var(--couleur-texte) 75%, black);
+
+  /* ---------- Pont vers Slidev ---------- */
+  --slidev-theme-primary: var(--couleur-accent);
+}
+
+html.dark {
+  --slidev-code-background: var(--couleur-fond-profond);
+}

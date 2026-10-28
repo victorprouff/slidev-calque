@@ -1,0 +1,8 @@
+{
+  "name": "slidev-calque",
+  "private": true,
+  "workspaces": [
+    "addon",
+    "themes/*"
+  ]
+}

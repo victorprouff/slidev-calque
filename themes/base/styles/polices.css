@@ -1,0 +1,82 @@
+/* ==============================================================
+ * POLICES — embarquées dans le thème (dossier fonts/).
+ * Les chemins sont relatifs à ce fichier : Vite les résout et copie
+ * les fichiers au build, rendu identique en dev, build et PDF.
+ * ============================================================== */
+
+/*
+ * MISO — texte courant. Trois graisses : light (300), regular (400), bold (700).
+ * Les métriques natives de Miso placent le texte trop bas dans sa ligne
+ * (pastilles, boutons, touches…) : ascent/descent-override les rééquilibrent.
+ */
+@font-face {
+  font-family: 'Miso';
+  src: url('../fonts/miso-light.ttf') format('truetype');
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Miso';
+  src: url('../fonts/miso-regular.ttf') format('truetype');
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Miso';
+  src: url('../fonts/miso-bold.ttf') format('truetype');
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+ * BARLOW CONDENSED — titres et grands chiffres (licence OFL, fonts/barlow-condensed-OFL.txt).
+ * Même inspiration DIN que Miso, mais aux angles vifs.
+ */
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('../fonts/barlow-condensed-semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Barlow Condensed';
+  src: url('../fonts/barlow-condensed-bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*
+ * MisoSVG — même fichier, utilisée uniquement dans les schémas SVG.
+ * Sans métriques forcées, Chromium repeint mal le <text> SVG en Miso
+ * (glyphes tronqués ou invisibles).
+ */
+@font-face {
+  font-family: 'MisoSVG';
+  src: url('../fonts/miso-regular.ttf') format('truetype');
+  font-weight: 400;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'MisoSVG';
+  src: url('../fonts/miso-bold.ttf') format('truetype');
+  font-weight: 700;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}

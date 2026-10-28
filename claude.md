@@ -24,8 +24,12 @@ Outil pour créer et faire évoluer mes présentations de formation (cybersécur
 
 ## Organisation
 
-- Ce dépôt contient l'outil uniquement. Les présentations sont dans un dépôt séparé (`../slides-formation`), qui a son propre CLAUDE.md.
-- Pendant le développement, les présentations référencent l'outil par chemin relatif (`theme: ../slidev-calque/themes/cyber`, `addons: [../slidev-calque/addon]`).
+- Ce dépôt contient l'outil uniquement. Les présentations sont dans un dépôt séparé (`../Slides`, projet Slidev dans `slides/`, une présentation par dossier `slides/decks/<nom>/`).
+- Pendant le développement, les présentations référencent l'outil par chemin relatif. Depuis `slides/decks/<nom>/slides.md` :
+  - `theme: ../../../../slidev-calque/themes/cyber` (relatif au dossier de `slides.md`) ;
+  - `addons: [../../../slidev-calque/addon]` (relatif au dossier **parent** : un `../` de moins, voir `docs/decisions/002-heritage-et-chargement.md`).
+- Présentation de test : `slides/decks/calque-test` (`make calque-test` dans `../Slides`).
+- Après un clone : `npm install` à la racine de ce dépôt (workspaces npm, lie `base` pour le thème enfant).
 - Une fois stable : publication en paquets versionnés.
 - Les décisions importantes sont notées dans `docs/decisions/`.
 

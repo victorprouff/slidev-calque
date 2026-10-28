@@ -1,0 +1,13 @@
+{
+  "name": "slidev-addon-calque",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Composants et layouts de la surcouche Calque. Aucune valeur en dur : uniquement des tokens.",
+  "keywords": [
+    "slidev-addon",
+    "slidev"
+  ],
+  "engines": {
+    "slidev": ">=53.0.0"
+  }
+}

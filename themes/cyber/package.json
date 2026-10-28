@@ -1,0 +1,26 @@
+{
+  "name": "slidev-theme-calque-cyber",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Thème des formations cybersécurité, hérite de slidev-theme-calque-base.",
+  "keywords": [
+    "slidev-theme",
+    "slidev"
+  ],
+  "engines": {
+    "slidev": ">=53.0.0"
+  },
+  "dependencies": {
+    "slidev-theme-calque-base": "^0.1.0"
+  },
+  "slidev": {
+    "colorSchema": "dark",
+    "defaults": {
+      "fonts": {
+        "sans": "Miso",
+        "mono": "Fira Code",
+        "local": "Miso,Barlow Condensed"
+      }
+    }
+  }
+}

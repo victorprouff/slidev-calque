@@ -165,6 +165,7 @@ et les polices d'un SVG passent en revanche toujours par les tokens.
 | `--trait-fort` | `2px` | encadré « règle », contour du numéro de section |
 | `--trait-titre` | `4px` | épaisseur du trait sous les titres |
 | `--largeur-trait-titre` | `3.6rem` | longueur du trait sous les titres |
+| `--largeur-legende` | `34rem` | largeur maximale de la légende d'un grand chiffre |
 | `--ombre-touche` | `0 5px 0 color-mix(in srgb, var(--couleur-texte) 75%, black)` | relief des touches |
 
 `--rayon-encart` garde son nom actuel : il est déjà utilisé dans le deck et ses composants.

@@ -1,0 +1,23 @@
+{
+  "name": "slidev-theme-calque-base",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Thème parent de la surcouche Calque : définit tous les tokens.",
+  "keywords": [
+    "slidev-theme",
+    "slidev"
+  ],
+  "engines": {
+    "slidev": ">=53.0.0"
+  },
+  "slidev": {
+    "colorSchema": "dark",
+    "defaults": {
+      "fonts": {
+        "sans": "Miso",
+        "mono": "Fira Code",
+        "local": "Miso,Barlow Condensed"
+      }
+    }
+  }
+}
