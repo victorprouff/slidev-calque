@@ -1,11 +1,13 @@
 <!--
-  Carte : numéro (ou chiffre) facultatif, titre, texte.
+  Carte : numéro (ou chiffre) facultatif, surtitre, titre, texte.
   Usage : <Carte num="2 / 3" titre="des attaques visent les PME" variante="danger">Source…</Carte>
+  surtitre : petit libellé en majuscules au-dessus du titre (lieu, date…).
   variante : "danger" (corail) ou "succes" (sauge). Sans variante : couleurs normales.
 -->
 <script setup lang="ts">
 defineProps<{
   num?: string | number
+  surtitre?: string
   titre?: string
   variante?: 'danger' | 'succes'
 }>()
@@ -14,6 +16,7 @@ defineProps<{
 <template>
   <div class="carte" :class="variante && `carte--${variante}`">
     <div v-if="num !== undefined" class="carte__num">{{ num }}</div>
+    <div v-if="surtitre" class="carte__surtitre">{{ surtitre }}</div>
     <h3 v-if="titre || $slots.titre" class="carte__titre">
       <slot name="titre">{{ titre }}</slot>
     </h3>
@@ -24,7 +27,7 @@ defineProps<{
 </template>
 
 <style>
-.carte {
+:where(.carte) {
   background: var(--couleur-surface);
   border: var(--trait-fin) solid var(--couleur-bordure);
   border-radius: var(--rayon-encart);
@@ -45,6 +48,14 @@ defineProps<{
   font-size: var(--taille-moyen);
   line-height: var(--interligne-serre);
   margin: 0 0 var(--espace-xs);
+}
+
+.carte__surtitre {
+  font-size: var(--taille-mini);
+  letter-spacing: var(--approche-etiquette);
+  text-transform: uppercase;
+  color: var(--couleur-texte-attenue);
+  margin-bottom: var(--espace-xs);
 }
 
 .carte__num + .carte__titre {

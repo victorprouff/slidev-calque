@@ -9,7 +9,7 @@
 </template>
 
 <style>
-.regle {
+:where(.regle) {
   border: var(--trait-fort) solid var(--couleur-accent);
   border-radius: var(--rayon-encart);
   padding: var(--remplissage-encadre);

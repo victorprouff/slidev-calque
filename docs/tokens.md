@@ -102,8 +102,8 @@ Une taille qui ne tombe pas sur l'échelle prend la plus proche.
 | Token | Valeur | Remplace | Usage |
 |---|---|---|---|
 | `--taille-mini` | `0.8rem` | 0,75 – 0,9 | source, kicker, mention sous un champ |
-| `--taille-petit` | `1.05rem` | 0,95 – 1,1 | texte des cartes compactes |
-| `--taille-texte` | `1.25rem` | 1,15 – 1,3 | texte courant (taille de base de la slide) |
+| `--taille-petit` | `1.1rem` | 0,95 – 1,15 | texte des cartes |
+| `--taille-texte` | `1.25rem` | 1,2 – 1,3 | texte courant (taille de base de la slide) |
 | `--taille-moyen` | `1.5rem` | 1,35 – 1,6 | titre de carte, légende de grand chiffre, encadré compact |
 | `--taille-fort` | `1.8rem` | 1,7 – 2 | encadré « règle », éléments de liste en gros |
 | `--taille-titre` | `2.1rem` | 2,1 – 2,3 | titre de slide (`h1`) |

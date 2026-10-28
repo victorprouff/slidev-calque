@@ -20,7 +20,12 @@ Date : 2026-10-27
 - **Règles d'habillage en `:where(.slidev-layout) …`** quand une classe doit pouvoir les
   surcharger (liens, `strong`, puces) : `:where()` ramène la spécificité à celle d'une balise.
 - **Composants de l'addon en styles non scopés**, préfixés par le nom du composant
-  (`.carte__titre`, `.grand-chiffre--danger`) : une présentation peut les ajuster sans `:deep()`.
+  (`.carte__titre`, `.grand-chiffre--danger`), et **racine en `:where(.carte)`** : spécificité
+  nulle, donc une classe utilitaire posée sur le composant (`mt-8`, `text-xl`) l'emporte.
+  Sans ça, `<Regle class="text-xl">` gardait la taille du composant.
+- **Styles écrits dans une slide** : Slidev les rend toujours `scoped`. Ils atteignent le contenu
+  passé au composant (écrit dans la slide), mais pas les balises que le composant génère
+  lui-même : pour celles-là, `:deep()` (`.cas :deep(.carte__titre) { … }`).
 
 ## Chemins depuis une présentation
 
@@ -40,3 +45,12 @@ présentation (comportement de Slidev 53, `resolveAddon(addon, userRoot)` puis `
   comprises, et s'applique à chaud sans recharger la page.
 - `import { computed } from 'vue'` fonctionne depuis un composant de l'addon.
 - `slidev build` embarque les polices du thème dans `dist/assets/`.
+
+## Validation sur la conférence (branche `conference-calque` du dépôt des slides)
+
+Les 49 slides exportées avant et après migration ont été comparées image par image : rendu
+identique à quelques pixels près. Écarts restants, voulus :
+
+- les `<strong class="c-succes">` / `c-danger` s'affichent enfin dans leur couleur (bug de
+  spécificité de l'ancien `style.css`, corrigé dans base) ;
+- texte des cartes à `--taille-petit` (1,1 rem) au lieu de 1 à 1,15 rem selon les slides.

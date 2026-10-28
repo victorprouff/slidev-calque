@@ -53,6 +53,11 @@ const classes = computed(() => [
   max-width: var(--largeur-legende);
 }
 
+/* Dans un bloc centré, la légende (de largeur limitée) se centre aussi */
+.text-center .grand-chiffre__legende {
+  margin-inline: auto;
+}
+
 .grand-chiffre__legende > p {
   margin: 0;
 }
